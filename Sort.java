@@ -20,25 +20,18 @@ public class Sort {
             for(int j = i + 1; j < tam; j++) {
                 int mj = modulo(array[j], m);
                 int mm = modulo(array[menor], m);
-                
-                // Primeiro critério: módulo M
+    
                 if(mj < mm) {
                     menor = j;
                 } else if(mj == mm) {
-                    // Segundo critério: empate no módulo
                     if(array[j] % 2 == 0 && array[menor] % 2 != 0) {
-                        // J é par, menor é ímpar - ímpar deve vir primeiro
-                        // Não troca, mantém o ímpar na posição
                     } else if(array[j] % 2 != 0 && array[menor] % 2 == 0) {
-                        // J é ímpar, menor é par - ímpar deve vir primeiro
                         menor = j;
                     } else if(array[j] % 2 != 0 && array[menor] % 2 != 0) {
-                        // Ambos ímpares - maior ímpar primeiro
                         if(array[j] > array[menor]) {
                             menor = j;
                         }
                     } else if(array[j] % 2 == 0 && array[menor] % 2 == 0) {
-                        // Ambos pares - menor par primeiro
                         if(array[j] < array[menor]) {
                             menor = j;
                         }
