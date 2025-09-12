@@ -34,22 +34,24 @@ public class SequenciaEspelho {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 
-        int s = ler.nextInt();
-        int e = ler.nextInt();
+        while (ler.hasNext()) {
+            int s = ler.nextInt();
+            int e = ler.nextInt();
 
-        int tam = 2 * (e - s + 1);
+            int tam = 2 * (e - s + 1);
 
-        int[] vet = new int[tam];
-        mirror(vet, s, e, tam);
+            int[] vet = new int[tam];
+            mirror(vet, s, e, tam);
 
-        for (int i = 0; i < tam; i++) {
-            if (vet[i] < 0) {
-                System.out.print("0" + (-vet[i]));
-            } else {
-                System.out.print(vet[i]);
+            for (int i = 0; i < tam; i++) {
+                if (vet[i] < 0) {
+                    System.out.print("0" + (-vet[i]));
+                } else {
+                    System.out.print(vet[i]);
+                }
             }
+            System.out.println(" ");
         }
-
         ler.close();
     }
 }
