@@ -11,9 +11,6 @@ public class Quicksort{
 	public static void quicksort(int[] array, int esq, int dir){
 		int i=esq; int j=dir; int pivo=array[(esq+dir)/2];
 		while(i<=j){
-			System.out.println("i:" + i +" ,j: " + j);
-			for(int k=0; k<5; k++) System.out.print(array[k] + " ");
-			System.out.println();
 			while(array[i]<pivo)i++;
 			while(array[j]>pivo)j--;
 			if(i <= j){
@@ -22,8 +19,6 @@ public class Quicksort{
 				j--;
 			}
 		}
-		System.out.println("esq: "+ esq + " dir: " + dir);
-		System.out.println("i-> "+ i + " j-> " + j);
 		if(esq<j)quicksort(array,esq,j);
 		if(i<dir)quicksort(array,i,dir);
 	}
